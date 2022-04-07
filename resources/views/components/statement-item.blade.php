@@ -1,7 +1,7 @@
-<h4 class="statement__item-title">Адрес: {{ $statement->address }}</h4>
+<h4 class="statement__item-title">{{ $statement->address }}</h4>
 <div class="statement__item">
     <p class="statement__item-date">{{ $statement->updated_at }} Номер заявки: {{ $statement->id }}</p>
-    <p class="statement__item-text">Цена: <span>{{ $statement->price }}</span></p>
+    <p class="statement__item-text">Ваш стек : <span>{{ $statement->price }}</span></p>
     <p>Категория:</p>
     <p class="statement__item-text"><span>{{ $statement->category->name }}</span></p>
     <p class="statement__item-text">Описание: <span>@isset($statement->description) {{ $statement->description }} @endisset</span></p>

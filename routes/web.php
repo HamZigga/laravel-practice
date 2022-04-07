@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatementController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VacancyController;
 
 
 /*
@@ -16,9 +17,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-})->name('main');
+Route::get('/', [VacancyController::class, 'show'])->name('main');
 Route::get('/statements/create', [StatementController::class, 'create'])->middleware('auth')->name('statement.create');
 Route::get('/statements', [StatementController::class, 'show'])->middleware('auth')->name('statement');
 Route::post('/statements/create/submit', [StatementController::class, 'store'])->middleware('auth')->name('statement.store');

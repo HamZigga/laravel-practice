@@ -33,23 +33,17 @@
             <h3 class="block-title__text">Наши вакансии</h3>
         </div>
         <div class="vancancies">
-            <div class="vacancies__item">
-                <img src="#" alt="" class="vancancies__item-img">
-                <p class="vacancies__item-title"></p>
-                <p class="vacancies__item-text"></p>
-                <a href="#" class="vacancies__item-link">Подробнее</a>
-            </div>
+            @foreach ($vacancies as $vacancy)
+                @include('components.vacancy-item')
+            @endforeach
         </div>
         <div class="block-title">
             <h3 class="block-title__text">Стажировка</h3>
         </div>
         <div class="vancancies probation">
-            <div class="vacancies__item probation__item">
-                <img src="#" alt="" class="vancancies__item probation__item-img">
-                <p class="vacancies__item-title probation__item-title"></p>
-                <p class="vacancies__item-text probation__item-text"></p>
-                <a href="#" class="vacancies__item-link probation__item-link">Подробнее</a>
-            </div>
+            @foreach ($probations as $probation)
+                @include('components.probation-item')
+            @endforeach
         </div>
     </div>
 

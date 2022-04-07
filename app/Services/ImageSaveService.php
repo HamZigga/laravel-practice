@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class ImageSaveService
@@ -17,7 +18,7 @@ class ImageSaveService
 
         $filename = $dir . '/' . \Str::random(40) . '.' . $ext;
         $img = Image::make($image)->encode($ext)->resize(600, 400);
-        \Storage::disk('public')->put($filename, $img);
+        Storage::disk('public')->put($filename, $img);
         return $filename;
     }
 }
