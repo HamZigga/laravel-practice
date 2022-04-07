@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="block-title">
-            <h3 class="block-title__text">Наши вакансии</h3>
+            <h3 class="block-title__text">{{$vacancies[0]->category->name ?? 'Вакансии'}}</h3>
         </div>
         <div class="vancancies">
             @guest

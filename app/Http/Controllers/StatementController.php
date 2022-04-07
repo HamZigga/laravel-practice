@@ -6,24 +6,25 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StatementRequest;
 use App\Models\Category;
 use App\Models\Statement;
+use App\Models\Vacancy;
 use App\Services\ImageSaveService;
 use Illuminate\Support\Facades\Storage;
 
 class StatementController extends Controller
 {
-    public function create()
-    {
-        return view('statement-create',['categories' => Category::all()]);
+    public function create($id)
+    {   
+        return view('statement-create', ['vacancy' => Vacancy::findOrfail($id)]);
     }
 
-    public function store($id, StatementRequest $request)
-    {   
+    public function store($vacancy_id, StatementRequest $request)
+    {
         Statement::create([
             'user_id' => auth()->user()->id,
             'status_id'  => 1,
-            'vacancy_id' => $id,
+            'vacancy_id' => $vacancy_id,    
             'experience' => $request->experience,
-            'technology_stack'=> $request->technology_stack,
+            'technology_stack' => $request->technology_stack,
             'description' => $request->description
         ]);
         return redirect()->route('main')->with('success', 'Заявка успешно отправлена');
@@ -34,11 +35,11 @@ class StatementController extends Controller
         return view('statement-edit', ['statement' => Statement::findOrFail($id), 'categories' => Category::all()]);
     }
 
-    public function update($id,StatementRequest $request)
+    public function update($id, StatementRequest $request)
     {
         Statement::findOrFail($id)->update([
             'experience' => $request->experience,
-            'technology_stack'=> $request->technology_stack,
+            'technology_stack' => $request->technology_stack,
             'description' => $request->description
         ]);
         return redirect()->route('main')->with('success', 'Заявка успешно Обновлена');
@@ -54,6 +55,5 @@ class StatementController extends Controller
         $statement = Statement::findOrFail($id);
         $statement->delete();
         return redirect()->route('statement')->with('success', 'Резюме успешно удалено');
-
     }
 }

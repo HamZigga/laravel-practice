@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('vacancy_id')->references('id')->on('vacancies');
             $table->bigInteger('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on('statuses');
+            $table->string('requested_salary')->nullable();
             $table->string('experience');
             $table->string('technology_stack');
             $table->text('description');

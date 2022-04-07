@@ -5,3 +5,6 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> Users</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('status') }}'><i class='nav-icon la la-tasks'></i> Statuses</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('vacancy') }}'><i class='nav-icon la la-briefcase'></i> Vacancies</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('vacancy') }}'><i class='nav-icon la la-question'></i> Vacancies</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('statement') }}'><i class='nav-icon la la-question'></i> Statements</a></li>

@@ -9,10 +9,10 @@
 
     <nav class="header__nav">
         <li class="nav__item">
-            <a href="{{ route('main') }}" class="nav__item-link">Вакансии</a>
+            <a href="{{ route('vacancies') }}" class="nav__item-link">Вакансии</a>
         </li>
         <li class="nav__item">
-            <a href="#" class="nav__item-link">Стажировка</a>
+            <a href="{{ route('probation') }}" class="nav__item-link">Стажировка</a>
         </li>
         <li class="nav__item">
             <a href="#" class="nav__item-link">О нас</a>

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->string('img');
+            $table->string('advantages')->nullable();
+            $table->string('requirements')->nullable();
             $table->text('description');
             $table->timestamps();
         });

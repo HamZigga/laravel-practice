@@ -6,8 +6,9 @@
     <div class="container">
     <div class="block-title">
             <h3 class="block-title__text">Оставьте нам свое резюме</h3>
+            <h4 class="block-title__text">{{ $vacancy->title }}</h4>
         </div>
-    <form class="form" action="{{ route('statement.store') }}" method="POST">
+    <form class="form" action="{{ route('statement.store', $vacancy->id) }}" method="POST">
         @csrf
         <div class="form__item">
             <label class="form__item-label" for="experience">Ваш опыт</label>
