@@ -25,7 +25,10 @@ class StatementRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'requested_salary' => 'max:255',
+            'experience' => 'require|max:255',
+            'technology_stack' => 'require|max:255',
+            'description' => 'require|max:10000',
         ];
     }
 
@@ -49,7 +52,16 @@ class StatementRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'requested_salary.max' => 'Длина поля превышает :max символов',
+
+            'experience.required' => 'Поле опыта работы является обязательным',
+            'experience.max' => 'Длина поля превышает :max символов',
+
+            'technology_stack.required' => 'Поле стека является обязательным',
+            'technology_stack.max' => 'Длина поля превышает :max символов',
+
+            'description.required' => 'Поле описания является обязательным',
+            'description.max' => 'Длина поля превышает :max символов',
         ];
     }
 }

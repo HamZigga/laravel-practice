@@ -14,6 +14,7 @@ class Statement extends Model
         'user_id',
         'vacancy_id',
         'status_id',
+        'requested_salary',
         'experience',
         'technology_stack',
         'description',

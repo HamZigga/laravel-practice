@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="keywords" content="Вакансии, вакансии it, веб-разработка, it">
+        <meta name="description" content="Стань частью команды Nutnet. Мы всегда нацелены на развитие, совмещаем любовь к новым технологиям с высокими требованиями к результату, и создаем крутые проекты.">
+
 
         <title>@yield('title')</title>
 

@@ -15,6 +15,8 @@ class Vacancy extends Model
         'category_id',
         'subtitle',
         'img',
+        'advantages',
+        'requirements',
         'description',
     ];
 
