@@ -17,7 +17,10 @@ use App\Http\Controllers\VacancyController;
 |
 */
 
-Route::get('/', [VacancyController::class, 'show'])->name('main');
+Route::get('/', [VacancyController::class, 'indexPreview'])->name('main');
+Route::get('/vacancies', [VacancyController::class, 'index'])->name('vacancies');
+Route::get('/vacancies/{id}', [VacancyController::class, 'show'])->name('vacancies.show');
+
 Route::get('/statements/create', [StatementController::class, 'create'])->middleware('auth')->name('statement.create');
 Route::get('/statements', [StatementController::class, 'show'])->middleware('auth')->name('statement');
 Route::post('/statements/create/submit', [StatementController::class, 'store'])->middleware('auth')->name('statement.store');
@@ -27,4 +30,4 @@ Route::get('/statements/update/{id}/delete', [StatementController::class, 'destr
 
 Route::get('/statements/count', [StatementController::class, 'count'])->name('statement.count');
 Route::get('/personalarea', [UserController::class, 'show'])->middleware('auth')->name('personal.area');
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

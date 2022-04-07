@@ -36,6 +36,7 @@
             @foreach ($vacancies as $vacancy)
                 @include('components.vacancy-item')
             @endforeach
+            <a href="{{ route('vacancies', 1) }}">Показать больше</a>
         </div>
         <div class="block-title">
             <h3 class="block-title__text">Стажировка</h3>
@@ -44,6 +45,7 @@
             @foreach ($probations as $probation)
                 @include('components.probation-item')
             @endforeach
+            <a href="{{ route('vacancies', 2) }}">Показать больше</a>
         </div>
     </div>
 

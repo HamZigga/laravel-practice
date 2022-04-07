@@ -16,16 +16,15 @@ class StatementController extends Controller
         return view('statement-create',['categories' => Category::all()]);
     }
 
-    public function store(StatementRequest $request)
+    public function store($id, StatementRequest $request)
     {   
         Statement::create([
             'user_id' => auth()->user()->id,
-            'category_id' => 1,
-            'address' => $request->address,
-            'description' => $request->description,
-            'price' => $request->price,
-            'photo_place' => (new ImageSaveService)->imageSave('place', $request->file('photo_place')),
-            'photo_blueprint' => (new ImageSaveService)->imageSave('blueprint', $request->file('photo_blueprint')),
+            'status_id'  => 1,
+            'vacancy_id' => $id,
+            'experience' => $request->experience,
+            'technology_stack'=> $request->technology_stack,
+            'description' => $request->description
         ]);
         return redirect()->route('main')->with('success', 'Заявка успешно отправлена');
     }
@@ -38,24 +37,11 @@ class StatementController extends Controller
     public function update($id,StatementRequest $request)
     {
         Statement::findOrFail($id)->update([
-            'user_id' => auth()->user()->id,
-            'category_id' => '1',
-            'address' => $request->address,
-            'description' => $request->description,
-            'price' => $request->price,
-            'photo_place' => 'KARTINKA',
-            'photo_blueprint' => 'KARTINKA',
+            'experience' => $request->experience,
+            'technology_stack'=> $request->technology_stack,
+            'description' => $request->description
         ]);
         return redirect()->route('main')->with('success', 'Заявка успешно Обновлена');
-    }
-
-    public function delete(int $id)
-    {
-        $statement = Statement::findOrFail($id);
-        $statement->delete();
-        Storage::disk('public')->delete($statement->photo_place);
-        Storage::disk('public')->delete($statement->photo_place);
-        return redirect()->route('home', $id)->with('success', "Заявка удалена");
     }
 
     public function show()
@@ -63,17 +49,11 @@ class StatementController extends Controller
         return view('statement-list', ['statements' => Statement::where('user_id', auth()->user()->id)->orderBy('updated_at')->paginate(10)]);
     }
 
-    public function count(){
-        return response()->json([
-            'statementCount' => Statement::count()
-        ]);
-    }
-
     public function destroy($id)
     {
         $statement = Statement::findOrFail($id);
         $statement->delete();
-        return redirect()->route('statement')->with('success', 'Заявка успешно Обновлена');
+        return redirect()->route('statement')->with('success', 'Резюме успешно удалено');
 
     }
 }

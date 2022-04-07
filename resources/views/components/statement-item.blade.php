@@ -1,15 +1,15 @@
-<h4 class="statement__item-title">{{ $statement->address }}</h4>
+<h4 class="statement__item-title">{{ $statement->vacancy->title }}</h4>
 <div class="statement__item">
+    <p>{{ $statement->vacancy->category->name }}</p>
+    <p>{{ $statement->status->name }}</p>
     <p class="statement__item-date">{{ $statement->updated_at }} Номер заявки: {{ $statement->id }}</p>
-    <p class="statement__item-text">Ваш стек : <span>{{ $statement->price }}</span></p>
-    <p>Категория:</p>
-    <p class="statement__item-text"><span>{{ $statement->category->name }}</span></p>
-    <p class="statement__item-text">Описание: <span>@isset($statement->description) {{ $statement->description }} @endisset</span></p>
-    <p class="statement__item-text">Фото помещения: </p>
-    <img src="@isset($statement->photo_place){{ asset('storage/'.$statement->photo_place) }}@endisset" alt="place" class="statement__item-image">
-    <p class="statement__item-text">Фото плана помещения:</p>
-    <img src="@isset($statement->photo_blueprint){{ asset('storage/'.$statement->photo_blueprint) }}@endisset" alt="blueprint" class="statement__item-image">
-
-    <a href="{{ route('statement.edit', $statement->id) }}" class="personal__link">Редактировать заявку</a>
-    <a href="{{ route('statement.destroy', $statement->id) }}" class="personal__link">Удалить заявку</a>
+    <p class="statement__item-text">Ваш стек: <span>{{ $statement->technology_stack }}</span></p>
+    <p class="statement__item-text">Описание: <span>{{ $statement->description ?? '' }}</span></p>
+    
+    @if($statement->status_id == 1)
+        <a href="{{ route('statement.edit', $statement->id) }}" class="personal__link">Редактировать заявку</a>
+        <a href="{{ route('statement.destroy', $statement->id) }}" class="personal__link">Удалить заявку</a>
+    @elseif($statement->status_id == 2)
+        <p>Ваше резюме одобрено по этой вакансии, вскоре с вами свяжется наш HR</p>
+    @endif
 </div>
