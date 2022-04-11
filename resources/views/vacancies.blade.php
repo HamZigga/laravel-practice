@@ -11,9 +11,11 @@
             @guest
                 <p>Для возможности Откликнуться на вакансию необходимо пройти <a href="{{ route('register') }}">регистрацию</a></p>
             @endguest
+            <div class="vacancies__items">
             @foreach ($vacancies as $vacancy)
                 @include('components.vacancy-item')
             @endforeach
+            </div>
         </div>
         {{ $vacancies->links() }}
     </div>
