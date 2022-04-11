@@ -1,10 +1,7 @@
 <header class="header">
     <a class="header__left" href="{{ route('main') }}">
 
-        <img class="logo__img" src="{{ asset('storage/images/baseimg/templogo.png') }}" alt="logo">
-        <div class="logo__text">
-            <p class="logo__text-title">Nutnetemployees</p>
-        </div>
+        <img class="logo__img" src="{{ asset('storage/images/baseimg/logo1.svg') }}" alt="logo">
     </a>
 
     <nav class="header__nav">

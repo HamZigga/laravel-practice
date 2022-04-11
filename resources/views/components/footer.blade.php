@@ -11,7 +11,6 @@
                 <a href="#"><img src="{{ asset('storage/images/baseimg/image10.png') }}" alt="social"></a>
                 <a href="#"><img src="{{ asset('storage/images/baseimg/image11.png') }}" alt="social"></a>
                 <a href="#"><img src="{{ asset('storage/images/baseimg/image12.png') }}" alt="social"></a>
-                <a href="#"><img src="{{ asset('storage/images/baseimg/image13.png') }}" alt="social"></a>
             </div>
         </div>
     </div>

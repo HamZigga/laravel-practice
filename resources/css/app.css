@@ -2,7 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Scada&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -30,9 +29,9 @@ body {
 }
 
 .logo__img {
-    object-fit: cover;
-    width: 75px;
-    height: 75px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
     margin-right: 10px;
 }
 
@@ -92,17 +91,16 @@ body {
     border-radius: 3px;
 }
 
-.fullscreen{
+.fullscreen {
     display: flex;
     justify-content: space-around;
     background: url("/storage/images/baseimg/bg.png") no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
-
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.fullscreen__item{
+.fullscreen__item {
     display: flex;
     height: 100%;
     justify-content: center;
@@ -111,28 +109,30 @@ body {
     color: #FFFFFF;
 }
 
-.fullscreen__item-right{
+.fullscreen__item-right {
     width: 200px;
     word-wrap: normal;
 }
-.fullscreen__item:last-child{
+
+.fullscreen__item:last-child {
     flex-direction: column;
     font-size: 50px;
     align-items: flex-start;
     justify-content: flex-end;
     padding-bottom: 10vh;
 }
-.fullscreen__item-text{
+
+.fullscreen__item-text {
     width: 400px;
     word-wrap: normal;
 }
 
-.fullscreen__item-counter{
+.fullscreen__item-counter {
     font-size: 45px;
     word-wrap: normal;
 }
 
-.fullscreen__item-button{
+.fullscreen__item-button {
     padding: 1px 20px;
     background-color: #FFFFFF;
     border: 5px solid #FFFFFF;
@@ -143,7 +143,7 @@ body {
     transition: 0.2s linear;
 }
 
-.fullscreen__item-button:hover{
+.fullscreen__item-button:hover {
     background-color: rgba(0, 0, 0, 0);
     color: #FFFFFF;
 }
@@ -160,7 +160,6 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
     margin: 0 auto;
-    
 }
 
 .features {
@@ -189,60 +188,62 @@ body {
 .aboutus {
     width: 100%;
     background: rgba(0, 0, 0, 0.1);
-    
 }
 
-.aboutus__main{
+.aboutus__main {
     display: flex;
     justify-content: center;
     padding: 20px 0 50px 0;
 }
-.aboutus__main-img{
+
+.aboutus__main-img {
     max-width: 50%;
     margin-right: 20px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.aboutus__main-text{
+.aboutus__main-text {
     width: 550px;
 }
 
-.footer{
+.footer {
     background-color: #FFFFFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.footer__upper{
+.footer__upper {
     display: flex;
     justify-content: space-around;
 }
 
-.footer__social{
+.footer__social {
     display: flex;
     justify-content: center;
 }
 
-.footer__social a{
+.footer__social a {
     padding: 5px;
 }
 
-.footer__lower{
+.footer__lower {
     display: flex;
     justify-content: center;
 }
 
-.form{
+.form {
     width: 900px;
 }
 
-.form_item{
+.form_item {
     display: flex;
     flex-direction: column;
     width: 100%;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.form__item-input, .form__item-textarea, .form__item-select{
+.form__item-input,
+.form__item-textarea,
+.form__item-select {
     width: 800px;
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid #000;
@@ -250,12 +251,11 @@ body {
     margin: 10px 0 25px 0;
 }
 
-.form__item-label{
+.form__item-label {
     font-size: 28px;
 }
 
-
-.form__item-button{
+.form__item-button {
     margin-top: 20px;
     padding: 5px 15px;
     border: 2px solid #000;
@@ -264,28 +264,28 @@ body {
     transition: 0.2s linear;
 }
 
-.form__item-button:hover{
+.form__item-button:hover {
     background-color: #000;
     color: #FFFFFF;
 }
 
-.form__item-a{
+.form__item-a {
     font-size: 28px;
     padding: 20px 0;
     text-decoration: underline;
 }
 
-.personal__label{
+.personal__label {
     font-size: 24px;
 }
 
-.personal__text{
+.personal__text {
     font-size: 28px;
     font-weight: bold;
     padding-bottom: 10px;
 }
 
-.personal__link{
+.personal__link {
     margin-top: 20px;
     border: 2px solid #000;
     background-color: #FFFFFF;
@@ -294,17 +294,16 @@ body {
     transition: 0.2s ease-in-out;
 }
 
-.personal__link:hover{
+.personal__link:hover {
     background-color: #000;
     color: #FFFFFF;
 }
 
-.container-pesonalarea{
+.container-pesonalarea {
     margin-bottom: 150px;
 }
 
-
-.statement__item{
+.statement__item {
     border: 2px solid #000;
     border-radius: 5px;
     padding: 20px 40px;
@@ -313,26 +312,27 @@ body {
     word-wrap: break-word;
 }
 
-.statement__item-date{
+.statement__item-date {
     font-size: 14px;
 }
 
-.statement__item-title{
+.statement__item-title {
     font-size: 28px;
     padding-top: 20px;
     padding-bottom: 15px;
     font-weight: bold;
 }
-.statement__item-text{
+
+.statement__item-text {
     padding: 5px 0;
 }
 
-.statement__item-text span{
+.statement__item-text span {
     font-weight: bold;
     font-size: 24px;
 }
 
-.statement__item-image{
+.statement__item-image {
     object-fit: cover;
     max-width: 600px;
     max-height: 400px;

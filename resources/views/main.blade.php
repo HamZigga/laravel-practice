@@ -9,22 +9,22 @@
         </div>
         <div class="features">
             <div class="features__item">
-                <img class="features__item-img" src="{{ asset('storage/images/baseimg/feature-img-4.png') }}" alt="item">
+                <img class="features__item-img" src="{{ asset('storage/images/baseimg/item1.png') }}" alt="item">
                 <p class="features__item-text">Уникальные IT-проекты со сложной бизнес-логикой: создаём, поддерживаем,
                     развиваем.</p>
             </div>
             <div class="features__item">
-                <img class="features__item-img" src="{{ asset('storage/images/baseimg/feature-img-3.png') }}" alt="item">
+                <img class="features__item-img" src="{{ asset('storage/images/baseimg/item2.png') }}" alt="item">
                 <p class="features__item-text">Профессионалы с разным бэкграундом, объединенные общими идеями и ценностями.
                 </p>
             </div>
             <div class="features__item">
-                <img class="features__item-img" src="{{ asset('storage/images/baseimg/feature-img-3.png') }}" alt="item">
+                <img class="features__item-img" src="{{ asset('storage/images/baseimg/item3.png') }}" alt="item">
                 <p class="features__item-text">Минимум абстракции, больше смысла. Соединяем дизайн-мышление и рациональность
                     для IT-проектов, которые приносят деньги.</p>
             </div>
             <div class="features__item">
-                <img class="features__item-img" src="{{ asset('storage/images/baseimg/feature-img-3.png') }}" alt="item">
+                <img class="features__item-img" src="{{ asset('storage/images/baseimg/item4.png') }}" alt="item">
                 <p class="features__item-text">Горизонтальная коммуникация. Нет начальников и подчиненных. Вместе работаем,
                     вместе отдыхаем.</p>
             </div>
